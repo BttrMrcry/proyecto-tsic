@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1> Apps disponibles </h1>
+
+{% for app in apps %}
+    <div> 
+        <h3>{{app.name}}</h3>
+        <p>{{app.description}}</p>
+    </div>
+{% endfor %}
+{% endblock content %}
