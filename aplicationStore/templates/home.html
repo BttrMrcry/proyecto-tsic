@@ -5,7 +5,7 @@
 
 {% for app in apps %}
     <div> 
-        <h3>{{app.name}}</h3>
+        <a href = "{% url 'app' app.id %}"> <h3>{{app.name}}  </h3> </a>
         <p>{{app.description}}</p>
     </div>
 {% endfor %}
