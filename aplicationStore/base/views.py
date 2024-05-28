@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+from .models import App
 # Create your views here.
 apps = [
     {
@@ -16,6 +17,7 @@ apps = [
 ]
 
 def home(request):
+    apps = App.objects.all()
     context = {"apps": apps}
     return render(request, "home.html", context)
 

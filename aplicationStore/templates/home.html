@@ -4,9 +4,11 @@
 <h1> Apps disponibles </h1>
 
 {% for app in apps %}
-    <div> 
-        <a href = "{% url 'app' app.id %}"> <h3>{{app.name}}  </h3> </a>
+    <div>
+        <img src="{{app.icon.url}}" width = "400" height="400"> 
+        <a href = "{% url 'app' app.id %}"> <h3> {{app.name}} </h3> </a>
         <p>{{app.description}}</p>
+        <P><a href="{{app.app_file.url}}" download> Descargar</a></P>
     </div>
 {% endfor %}
 {% endblock content %}
