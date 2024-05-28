@@ -77,9 +77,13 @@ WSGI_APPLICATION = "aplicationStore.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tienda-apps',
+        'USER':'user',
+        'PASSWORD':'password',
+        'HOST':'db_tsic2',
+        'PORT':'3306',
     }
 }
 
@@ -124,3 +128,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_ROOT = "{BASE_DIR}/../../../"
