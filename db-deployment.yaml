@@ -24,7 +24,7 @@ spec:
               value: password
             - name: MYSQL_USER
               value: user
-          image: mariadb
+          image: mysql
           name: db-tsic2
           ports:
             - containerPort: 3306
