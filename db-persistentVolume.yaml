@@ -22,4 +22,4 @@ spec:
         - key: name
           operator: In
           values:
-          - worker-1
+          - Worker-1
