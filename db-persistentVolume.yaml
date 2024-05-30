@@ -19,7 +19,7 @@ spec:
     required:
       nodeSelectorTerms:
       - matchExpressions:
-        - key: name
+        - key: kubernetes.io/hostname
           operator: In
           values:
-          - Worker-1
+          - worker-1
