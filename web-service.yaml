@@ -4,14 +4,13 @@ metadata:
   annotations:
     kompose.cmd: C:\Users\ricardolb\repos\proyecto-tsic\kompose.exe convert
     kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
   labels:
     io.kompose.service: web
   name: web
 spec:
   ports:
     - name: "8000"
-      port: 8000
+      port: 8080
       targetPort: 8000
   selector:
     io.kompose.service: web
