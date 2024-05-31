@@ -1,34 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: C:\Users\ricardolb\repos\proyecto-tsic\kompose.exe convert
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
   labels:
-    io.kompose.service: web
+    app: web
   name: web
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      io.kompose.service: web
-  strategy: {}
+      app: web
   template:
     metadata:
-      annotations:
-        kompose.cmd: C:\Users\ricardolb\repos\proyecto-tsic\kompose.exe convert
-        kompose.version: 1.26.0 (40646f47)
-      creationTimestamp: null
       labels:
-        io.kompose.service: web
+        app: web
     spec:
       containers:
         - args:
             - sh
             - -c
             - python manage.py migrate && python manage.py runserver 0.0.0.0:8000
-          image: web
+          image: bettermercury/django-app
           name: web-tsic2
           ports:
             - containerPort: 8000
