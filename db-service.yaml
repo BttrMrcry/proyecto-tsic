@@ -6,7 +6,7 @@ metadata:
   name: db-tsic2
 spec:
   ports:
-    - name: "3306"
+    - name: "db-tsic2"
       port: 3306
       targetPort: 3306
   selector:

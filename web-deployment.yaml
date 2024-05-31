@@ -19,7 +19,7 @@ spec:
             - sh
             - -c
             - python manage.py migrate && python manage.py runserver 0.0.0.0:8000
-          image: bettermercury/django-app:test-1
+          image: bettermercury/django-app:test-2
           name: web-tsic2
           ports:
             - containerPort: 8000
