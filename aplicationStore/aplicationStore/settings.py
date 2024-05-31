@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'tienda-apps',
         'USER':'user',
         'PASSWORD':'password',
-        'HOST':'db_tsic2',
+        'HOST':'db-tsic2',
         'PORT':'3306',
     }
 }

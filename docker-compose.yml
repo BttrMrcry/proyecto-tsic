@@ -4,7 +4,9 @@ services:
     container_name: "web_tsic2"
     build: .
     command: >
-      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py migrate && 
+      python manage.py createsuperuser --noinput &&
+      python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
     restart: on-failure
@@ -12,7 +14,7 @@ services:
       - db
 
   db:
-    container_name: "db_tsic2"
+    container_name: "db-tsic2"
     image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -20,7 +22,9 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     volumes:
-      - /home/ricardolb/test:/var/lib/mysql
+      - mariadb-data:/var/lib/mysql
     ports:
       - "3306:3306"
- 
+
+volumes:
+  mariadb-data:
