@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import App
+# Create your views here
 # Create your views here.
 apps = [
     {
@@ -19,10 +20,11 @@ apps = [
 def home(request):
     apps = App.objects.all()
     context = {"apps": apps}
-    return render(request, "home.html", context)
+    return render(request, "index.html", context)
 
 
 def app(request, app_id):
+    apps = App.objects.all()
     for app in apps:
         if app["id"] == int(app_id):
             context = {"app": app}
