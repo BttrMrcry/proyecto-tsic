@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: mariadb
-  name: db_tsic2
+  name: db-tsic2
 spec:
   ports:
     - name: "3306"
